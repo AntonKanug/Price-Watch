@@ -9,7 +9,10 @@ import SearchIcon from '@material-ui/icons/Search';
 import DirectionsIcon from '@material-ui/icons/Directions';
 import data from './data.json';
 import Results from './Results';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
+AOS.init();
 class Search extends Component {
   state={
     textField: null,
@@ -33,7 +36,7 @@ class Search extends Component {
       if (filteredData!==0) this.setState.show = true
       var placeholder = "Search for over " + data.length + " Products"
         return (
-          <div>
+          <div data-aos="fade-up" data-aos-offset="150">
             <div className="searchBar">
             {/* <IconButton aria-label="menu">
               <MenuIcon />
@@ -46,8 +49,8 @@ class Search extends Component {
             />
               <div>
             </div>
-            {console.log(this.state.textField)}
-            {console.log(data)}
+            {/* {console.log(this.state.textField)}
+            {console.log(data)} */}
             <Divider orientation="vertical" style={{height:'45px'}} />
             <IconButton type="submit" aria-label="search">
               <SearchIcon />
@@ -55,7 +58,6 @@ class Search extends Component {
           </div>
           <div style={{ alignItems: 'center',   margin: 'auto'}}>
           <Results products={filteredData}/>
-          {console.log(this.state.show)}
           </div>
         </div>
          );            

@@ -52,3 +52,63 @@
   transform: scale(1.04);
   box-shadow: 0px 0px 23px #d4d4d4;
 }
+
+.results{
+  align-items: 'center';  
+  margin: auto;
+  min-width: 1200px;
+  justify-content: center; 
+  margin-top: 40px;
+}
+
+.imgClass{
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 10px 20px 10px 20px;
+}
+.resultCardContent{
+  max-width: 800px;
+  display: inline-block;
+}
+.resultCardImg{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 1;
+  display: inline-block; 
+}
+
+.resultCardTitle{
+  color: black;
+  font-family: avenir;
+  font-size: 20px;
+  font-weight: 900;
+  margin: 5px;
+}
+
+.resultCardPrice{
+  color: black;
+  font-family: avenir;
+  font-size: 20px;
+  font-weight: 900;
+  margin: 5px;
+  display: inline-block;
+}
+
+.resultCard{
+  transition: 0.4s;
+  align-items: center;
+  margin: auto;
+  width:1000px;
+  height: 170px;
+  background: white;
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 12px #dfdfdf;
+  padding: 5px;
+}
+
+.resultCard:hover{
+  transform: scale(1.04);
+  box-shadow: 0px 0px 23px #d4d4d4;
+}
