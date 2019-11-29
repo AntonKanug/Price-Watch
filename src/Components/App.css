@@ -1,0 +1,54 @@
+    
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.mainTitle{
+  font-size:180px; 
+  font-family:'Avenir'; 
+  font-weight:900;
+  height: 200px;
+  color: rgb(13, 17, 22);
+  margin: 0px;
+  line-height: 0.85;
+}
+
+.subTitle{
+  font-size:30px; 
+  font-family:'Helvetica Neue'; 
+  font-weight:300;
+  height:40px;
+}
+
+.mainImage{
+  max-width: 570px;
+  margin-left: 00px;
+}
+
+.mainPage{
+  margin-top: 150px;
+}
+
+.flex-containter{
+  flex:wrap;
+  flex-wrap: row;
+  display: flex;
+}
+
+.searchBar{
+  box-shadow: 0px 0px 12px #dfdfdf;
+  padding: 4px 4px;
+  display: flex;
+  align-items: center;
+  width: 750px;
+  height: 60px;
+  margin: auto;
+  transition:0.3s;
+}
+
+.searchBar:hover {
+  transform: scale(1.04);
+  box-shadow: 0px 0px 23px #d4d4d4;
+}

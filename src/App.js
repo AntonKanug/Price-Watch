@@ -6,7 +6,7 @@ class App extends Component{
   render() {
     return(
       <BrowserRouter>
-        {/* <Route exact path='/' component={Homepage}/> */}
+        <Route exact path='/' component={Homepage}/>
       </BrowserRouter>
     )
   }
