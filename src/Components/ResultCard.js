@@ -21,7 +21,7 @@ class ResultCard extends Component {
                 <div className="flex-containter" >
                 
                 <div className="imgClass">
-                    <img className="resultCardImg" src={this.props.product.image}></img>
+                    <img className="resultCardImg" style={{width:'150px', height:'150px'}}src={this.props.product.image}></img>
                 </div>
                 
                 <div className="resultCardContent" >
@@ -31,7 +31,7 @@ class ResultCard extends Component {
                 <Rating name="read-only" value={this.props.product.rating}  precision={0.1} readOnly />
                 </div>
                 <br></br>
-                <div style={{marginTop: this.props.product.title.length < 75 ? '45px' : '20px', float:'bottom'}}>
+                <div style={{marginTop: this.props.product.title.length < 75 ? '47px' : this.props.product.title.length < 2*75 ? '23px': '-1px', float:'bottom'}}>
                 <Button
                 variant="contained"
                 href={this.props.product.URL}

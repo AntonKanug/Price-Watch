@@ -36,7 +36,7 @@ class Graphs extends Component {
             return {
                 labels: dates,
                 datasets: [{
-                    label: 'Prices',
+                    label: 'Price',
                     data: prices,
                     pointBorderWidth: 2,
                     pointHoverRadius: 2,
@@ -50,8 +50,8 @@ class Graphs extends Component {
             
             // 'rgba(237,204,23, 0.6)'
         
-        <div>
-        <div style={{width: '800px', height: '250px', display: 'inline-block', paddingLeft:'20px'}}>
+        <div >
+        <div style={{width: '800px', height: '250px', display: 'inline-block'}}>
             {console.log(prices)}
             <Line 
                 width={800}
