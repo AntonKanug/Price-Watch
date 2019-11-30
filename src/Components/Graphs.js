@@ -51,7 +51,7 @@ class Graphs extends Component {
             // 'rgba(237,204,23, 0.6)'
         
         <div >
-        <div style={{width: '800px', height: '250px', display: 'inline-block'}}>
+        <div style={{width: '800px', height: '250px', display: 'inline-block', paddingLeft:'15px'}}>
             {console.log(prices)}
             <Line 
                 width={800}
