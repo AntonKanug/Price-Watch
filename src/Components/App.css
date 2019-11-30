@@ -68,7 +68,7 @@
   padding: 10px 20px 10px 20px;
 }
 .resultCardContent{
-  max-width: 800px;
+  width: 800px;
   display: inline-block;
 }
 .resultCardImg{
@@ -90,7 +90,7 @@
 .resultCardPrice{
   color: black;
   font-family: avenir;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 900;
   margin: 5px;
   display: inline-block;
@@ -105,7 +105,7 @@
   background: white;
   margin-bottom: 30px;
   box-shadow: 0px 0px 12px #dfdfdf;
-  padding: 5px;
+  padding: 10px;
 }
 
 .resultCard:hover{
