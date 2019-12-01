@@ -31,6 +31,10 @@
       {
         "price": 129.9,
         "dateTime": "2019-11-26 06:01:54.046029"
+      },
+      {
+        "price": 125.89,
+        "dateTime": "2019-11-30 17:53:47.272355"
       }
     ],
     "emailList": [
@@ -43,7 +47,7 @@
   {
     "id": 1,
     "title": "Corsair CH-9206015-NA Gaming K55 RGB Keyboard, Backlit LED",
-    "priceToCompare": 69.99,
+    "priceToCompare": 59.99,
     "priceList": [
       {
         "price": 69.99,
@@ -72,6 +76,10 @@
       {
         "price": 69.99,
         "dateTime": "2019-11-26 06:01:55.646065"
+      },
+      {
+        "price": 59.99,
+        "dateTime": "2019-11-30 17:53:48.756182"
       }
     ],
     "emailList": [
@@ -84,7 +92,7 @@
   {
     "id": 2,
     "title": "Apple MR932LL/A 15.4' MacBook Pro Laptop (Retina, Touch Bar, 2.2GHz 6-Core Intel Core i7, 16GB RAM, 256GB SSD Storage) Space Gray",
-    "priceToCompare": 2958.95,
+    "priceToCompare": 3012.99,
     "priceList": [
       {
         "price": 2958.95,
@@ -111,8 +119,12 @@
         "dateTime": "2019-11-22 08:01:22.051261"
       },
       {
+        "price": 2958.95,
+        "dateTime": "2019-11-24 06:01:57.021512"
+      },
+      {
         "price": 3012.99,
-        "dateTime": "2019-11-26 06:01:57.021512"
+        "dateTime": "2019-11-30 17:53:51.791137"
       }
     ],
     "emailList": [
@@ -126,7 +138,7 @@
   {
     "id": 3,
     "title": "New Apple MacBook Air (13-inch, 8GB RAM, 128GB Storage) - Gold",
-    "priceToCompare": 1439.99,
+    "priceToCompare": 1399.99,
     "priceList": [
       {
         "price": 1439.99,
@@ -153,8 +165,12 @@
         "dateTime": "2019-11-22 08:01:23.315728"
       },
       {
-        "price": 1399.99,
+        "price": 1499.99,
         "dateTime": "2019-11-26 06:01:58.345611"
+      },
+      {
+        "price": 1399.99,
+        "dateTime": "2019-11-30 17:53:51.791137"
       }
     ],
     "emailList": [
@@ -197,6 +213,10 @@
       {
         "price": 1289.99,
         "dateTime": "2019-11-26 06:01:59.881408"
+      },
+      {
+        "price": 1249.99,
+        "dateTime": "2019-11-30 17:53:53.595033"
       }
     ],
     "emailList": [
@@ -238,8 +258,12 @@
         "dateTime": "2019-11-22 08:01:26.063904"
       },
       {
-        "price": 710.00,
+        "price": 839.99,
         "dateTime": "2019-11-26 06:02:01.591386"
+      },
+      {
+        "price": 710.00,
+        "dateTime": "2019-11-30 06:02:01.591386"
       }
     ],
     "emailList": [
@@ -282,13 +306,17 @@
       {
         "price": 1499.99,
         "dateTime": "2019-11-26 06:02:02.963950"
+      },
+      {
+        "price": 1499.99,
+        "dateTime": "2019-11-30 17:53:56.511687"
       }
     ],
     "emailList": [
       "antondilon@gmail.com",
       "antondilon2@gmail.com"
     ],
-    "rating": 4.7,
+    "rating": 0,
     "URL": "https://www.amazon.ca/Acer-Predator-15-6inch-Display-i7-9750H/dp/B07QXLFLXT/ref=sr_1_3?keywords=acer+predator+300&qid=1573944185&sr=8-3",
     "image": "https://images-na.ssl-images-amazon.com/images/I/712a83USPrL._AC_SX425_.jpg"
   },
@@ -324,20 +352,24 @@
       {
         "price": 799.0,
         "dateTime": "2019-11-26 06:02:07.031603"
+      },
+      {
+        "price": 799.0,
+        "dateTime": "2019-11-30 17:53:57.965486"
       }
     ],
     "emailList": [
       "kanugala@mcmaster.ca",
       "antondilon@gmail.com"
     ],
-    "rating": 3.8,
+    "rating": 0,
     "URL": "https://www.amazon.ca/Microsoft-Surface-Laptop-Intel-Platinum/dp/B07FCZ3HG7/ref=sr_1_3?keywords=microsoft+surface&qid=1573944252&sr=8-3",
     "image": "https://images-na.ssl-images-amazon.com/images/I/71YWn3XKVkL._AC_SX679_.jpg"
   },
   {
     "id": 8,
     "title": "AmazonBasics Pre-sharpened Wood Cased #2 HB Pencils, 150 Pack",
-    "priceToCompare": 16.77,
+    "priceToCompare": 14.25,
     "priceList": [
       {
         "price": 16.77,
@@ -369,7 +401,7 @@
       },
       {
         "price": 14.25,
-        "dateTime": "2019-11-30 12:28:43.023433"
+        "dateTime": "2019-11-30 17:53:59.815013"
       }
     ],
     "emailList": [
@@ -382,7 +414,7 @@
   {
     "id": 9,
     "title": "Borderlands 3 Super Deluxe Edition - PlayStation 4",
-    "priceToCompare": 119.99,
+    "priceToCompare": 89.99,
     "priceList": [
       {
         "price": 119.99,
@@ -411,6 +443,10 @@
       {
         "price": 119.99,
         "dateTime": "2019-11-26 06:02:10.174398"
+      },
+      {
+        "price": 89.99,
+        "dateTime": "2019-11-30 17:54:01.351276"
       }
     ],
     "emailList": [
@@ -423,7 +459,7 @@
   {
     "id": 10,
     "title": "PlayStation 4 - 1TB Slim - Console Edition",
-    "priceToCompare": 399.99,
+    "priceToCompare": 379.99,
     "priceList": [
       {
         "price": 366.14,
@@ -452,6 +488,10 @@
       {
         "price": 399.99,
         "dateTime": "2019-11-26 06:02:14.785872"
+      },
+      {
+        "price": 379.99,
+        "dateTime": "2019-11-30 17:54:03.134607"
       }
     ],
     "emailList": [
@@ -465,7 +505,7 @@
   {
     "id": 11,
     "title": "Apple MMEF2AM/A AirPods Wireless Bluetooth Headset for iPhones with iOS 10 or Later White",
-    "priceToCompare": 250.93,
+    "priceToCompare": 279.72,
     "priceList": [
       {
         "price": 250.93,
@@ -494,12 +534,16 @@
       {
         "price": 250.56,
         "dateTime": "2019-11-26 06:02:16.015565"
+      },
+      {
+        "price": 279.72,
+        "dateTime": "2019-11-30 17:54:04.732719"
       }
     ],
     "emailList": [
       "antondilon2@gmail.com"
     ],
-    "rating": 4.6,
+    "rating": 0,
     "URL": "https://www.amazon.ca/Apple-MMEF2AM-AirPods-Wireless-Bluetooth/dp/B01MQWUXZS/ref=sr_1_5?keywords=airpods&qid=1573944409&sr=8-5",
     "image": "https://images-na.ssl-images-amazon.com/images/I/41DYtv1JJaL._AC_SX425_.jpg"
   },
@@ -535,6 +579,10 @@
       {
         "price": 378.55,
         "dateTime": "2019-11-26 06:02:17.687140"
+      },
+      {
+        "price": 378.55,
+        "dateTime": "2019-11-30 17:54:06.941327"
       }
     ],
     "emailList": [
@@ -547,7 +595,7 @@
   {
     "id": 13,
     "title": "ICEBERG Water \u2013 Harvested from Newfoundland Icebergs \u2013 1L Bottle with < 5 PPM",
-    "priceToCompare": 13.97,
+    "priceToCompare": 19.59,
     "priceList": [
       {
         "price": 13.97,
@@ -576,6 +624,10 @@
       {
         "price": 13.97,
         "dateTime": "2019-11-26 06:02:18.916192"
+      },
+      {
+        "price": 19.59,
+        "dateTime": "2019-11-30 17:54:09.148437"
       }
     ],
     "emailList": [
@@ -623,7 +675,7 @@
       "antondilon@gmail.com"
     ],
     "rating": 5.0,
-    "URL": "https://www.amazon.ca/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_aps_sr_pg1_2?ie=UTF8&adId=A05202181IBS25F63BKA1&url=%2FICEBERG-Water-Harvested-Newfoundland-Icebergs%2Fdp%2FB07WNXTJNH%2Fref%3Dsr_1_2_sspa%3Fkeywords%3Dwater%26qid%3D1573991948%26sr%3D8-2-spons%26psc%3D1&qualifier=1573991948&id=7384677007132163&widgetName=sp_atf",
+    "URL": "https://www.amazon.ca/Anne-Mechanical-Gaming-Keyboard-Backlit/dp/B07MNZ24HP",
     "image": "https://images-na.ssl-images-amazon.com/images/I/6140akv6t4L._SX679_.jpg"
   }
 ]
