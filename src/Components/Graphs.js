@@ -31,8 +31,8 @@ class Graphs extends Component {
             gradientstroke.addColorStop(1, '#F77313');
             
             var gradientfill = ctx.createLinearGradient(700, 0, 0, 0);
-            gradientfill.addColorStop(0, 'rgb(255, 221, 36, 0.87)');
-            gradientfill.addColorStop(1, 'rgb(253, 119, 6, 0.8)');
+            gradientfill.addColorStop(0, 'rgb(255, 221, 36, 0.9)');
+            gradientfill.addColorStop(1, 'rgb(253, 119, 6, 0.9)');
             return {
                 labels: dates,
                 datasets: [{
