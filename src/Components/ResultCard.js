@@ -39,10 +39,10 @@ class ResultCard extends Component {
                 variant="contained"
                 href={this.props.product.URL}
                 target="_blank"
-                style={{fontFamily:'avenir', fontWeight:'700',backgroundColor:'#FEBD69'}}
+                style={{fontFamily:'avenir, sans-serif', fontWeight:'700',backgroundColor:'#FEBD69'}}
                 endIcon={<CallMadeIcon/>}>View Product</Button>
                 <Button
-                style={{float:'right', fontFamily:'avenir', fontWeight:'700'}}
+                style={{float:'right', fontFamily:'avenir, sans-serif', fontWeight:'700'}}
                 onClick = {() => this.setState({showGraph:!this.state.showGraph})}
             startIcon={this.state.showGraph? <CloseIcon style={{color:"#ff410c", fontSize: 27, fontWeight: 900}}/>:<TimelineIcon style={{color:"rgb(84, 209, 0)", fontSize: 27, fontWeight: 900}}/>}>{this.state.showGraph? "Close Chart":"View Chart"}</Button>
                 </div>

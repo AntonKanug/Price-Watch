@@ -42,7 +42,7 @@ class Search extends Component {
               <MenuIcon />
             </IconButton> */}
             <InputBase
-              style={{paddingLeft: 10, flex: '1', fontFamily: 'avenir', fontSize: '23px'}}
+              style={{paddingLeft: 10, flex: '1', fontFamily: 'avenir, sans-serif', fontSize: '23px'}}
               placeholder={placeholder}
               inputProps={{ 'aria-label': 'search google maps' }}
               onChange={(event)=>this.setState({textField:event.target.value})}
