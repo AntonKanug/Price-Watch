@@ -23,7 +23,7 @@ class Navbar extends Component {
                 <div style={{ flexGrow:'1'}}></div>
                 {/* <p style={{ fontFamily:'Avenir, sans-serif', fontWeight:'900', fontSize:'19px', marginTop:'3px', marginRight:'-10px'}} className='text-AppBar'>Add Product</p> */}
               {/* <Add/> */}
-              <Button variant='contained' style={{marginTop:"0px", borderRadius:'100px', background:'#FEBD69', fontFamily:"Avenir", fontWeight:'900', textTransform:'none', fontSize:'20px', padding:'0px 25px 0px 25px', transition: '0.2s'}} 
+              <Button variant='contained' style={{marginTop:"0px", borderRadius:'100px', background:'#FEBD69', fontFamily:'Avenir, sans-serif', fontWeight:'900', textTransform:'none', fontSize:'20px', padding:'0px 25px 0px 25px', transition: '0.2s'}} 
         // onClick={this.handleEvent.bind(this)}
         onClick={() => this.setState({addProduct:!this.state.addProduct})}>Add Product</Button>
             </Toolbar>
