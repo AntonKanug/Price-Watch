@@ -34,20 +34,6 @@ class Homepage extends Component{
 //   }
   
   render() {
-    var frameworkCount=0,libCount=0, apiCount=0,i;
-    // if (this.list!=null){
-    //   for (i = 0; i < this.list.length; i++) { 
-    //     if (this.list[i].type === "Framework"){frameworkCount+=1}
-    //     if (this.list[i].type === "Library"){libCount+=1}
-    //     if (this.list[i].type === "API"){apiCount+=1}
-    //   }
-    // }
-
-    // if (frameworkCount === undefined){frameworkCount=0}
-    // if (libCount === undefined){libCount=0}
-    // if (apiCount === undefined){apiCount=0}
-    // var totaList=apiCount+libCount+frameworkCount
-    
     return(
       <div>
         <Navbar/>
