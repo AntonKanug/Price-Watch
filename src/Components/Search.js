@@ -57,7 +57,7 @@ class Search extends Component {
       if (filteredData!==0) this.setState.show = true
       var placeholder = "Search for over " + (this.data!=null? this.data.length: 0) + " Products"
         return (
-          <div data-aos="fade-up" data-aos-offset="150">
+          <div>
             <div className="searchBar">
             {/* <IconButton aria-label="menu">
               <MenuIcon />

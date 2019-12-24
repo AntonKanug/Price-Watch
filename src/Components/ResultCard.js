@@ -19,7 +19,7 @@ class ResultCard extends Component {
         var priceList = this.props.product.priceList
         var percentChange = ((priceList[priceList.length-1].price-priceList[priceList.length-2].price)*100/priceList[priceList.length-2].price).toFixed(2)
         return (
-                <div data-aos="fade-up" data-aos-offset="150">
+                <div data-aos="fade-up" data-aos-offset="50">
                 <div className="resultCard" style={{height: this.state.showGraph? '400px': '170px'}}>
                 <div className="flex-containter" style={{  flex:'wrap', flexWrap: 'row',display: 'flex'}}>
                 
