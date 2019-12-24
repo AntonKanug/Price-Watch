@@ -10,12 +10,10 @@ AOS.init();
 class Graphs extends Component {
 
     render() {
-        var i;
-        var prices = [];
-        var dates = [];
+        var prices = [], dates = [];
         var minPrice = this.props.productInfo.priceList[0].price;
         var maxPrice= minPrice;
-        var avgPrice = 0;
+        var i, avgPrice = 0;
         for (i = 0; i < this.props.productInfo.priceList.length; i++) { 
             prices[i] = this.props.productInfo.priceList[i].price
             dates[i] = this.props.productInfo.priceList[i].dateTime.slice(5, 10)
@@ -23,6 +21,7 @@ class Graphs extends Component {
             maxPrice = maxPrice < prices[i] ? prices[i] : maxPrice
             avgPrice += prices[i]
           }
+        //   dates = dates.slice(5)
           avgPrice = avgPrice/i
           const data = (canvas) => {
             const ctx = canvas.getContext("2d")
