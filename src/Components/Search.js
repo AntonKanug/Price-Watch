@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
@@ -7,22 +6,27 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import DirectionsIcon from '@material-ui/icons/Directions';
-import data from './data.json';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Results from './Results';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 AOS.init();
 class Search extends Component {
+  constructor(props){
+    super(props);
+    this.data = null
+  }
   state={
     textField: null,
-    show: false
+    show: false,
+    response: false
   }
       //Filter from entered textField
       filter = (product) => {
         if (product.title != null) {
         var title = product.title.toLowerCase();
-        if (this.state.textField === null) return true
+        if (!this.state.textField) return true
         else{
           var textFieldSearch = this.state.textField.toLowerCase();
           return title.indexOf(textFieldSearch)>-1
@@ -31,10 +35,27 @@ class Search extends Component {
       else return false
     }
 
+    componentDidMount(){
+        fetch('https://antonkanug.github.io/Price-Watch-BE/data.json')
+        .then(response => response.json())
+        .then((data) => {
+          this.data = data
+          this.setState({
+            response:true
+          });
+          console.log(this.data)
+          // jsonData is parsed json object received from url
+        })
+        .catch((error) => {
+          // handle your errors here
+          console.error(error)
+        })
+    }
     render() {
-      var filteredData = data.filter(this.filter)
+        
+      var filteredData = this.data!=null? this.data.filter(this.filter):null
       if (filteredData!==0) this.setState.show = true
-      var placeholder = "Search for over " + data.length + " Products"
+      var placeholder = "Search for over " + (this.data!=null? this.data.length: 0) + " Products"
         return (
           <div data-aos="fade-up" data-aos-offset="150">
             <div className="searchBar">
@@ -57,10 +78,14 @@ class Search extends Component {
             </IconButton>
           </div>
           <div style={{ alignItems: 'center',   margin: 'auto'}}>
-          <Results products={filteredData}/>
+          {this.data!=null? 
+            <Results products={filteredData}/>:
+            <div style={{textAlign: 'center', marginTop:'100px'}}>
+              <CircularProgress style={{color:"#F77313"}} size={50}/>
+            </div>}
           </div>
         </div>
-         );            
+         )            
     }
 }
 
