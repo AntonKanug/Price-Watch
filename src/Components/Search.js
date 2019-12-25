@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from "react";
+import axios from 'axios';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
@@ -36,10 +37,9 @@ class Search extends Component {
     }
 
     componentDidMount(){
-        fetch('https://antonkanug.github.io/Price-Watch-BE/data.json')
-        .then(response => response.json())
+      axios.get('https://pricewatch-antonk.herokuapp.com/products')
         .then((data) => {
-          this.data = data
+          this.data = data.data
           this.setState({
             response:true
           });
@@ -57,7 +57,7 @@ class Search extends Component {
       if (filteredData!==0) this.setState.show = true
       var placeholder = "Search for over " + (this.data!=null? this.data.length: 0) + " Products"
         return (
-          <div>
+          <div data-aos="fade-up" data-aos-offset="150">
             <div className="searchBar">
             {/* <IconButton aria-label="menu">
               <MenuIcon />
