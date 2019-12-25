@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import CallMadeIcon from '@material-ui/icons/CallMade';
-import ExpandLessIcon from '@material-ui/icons/ExpandLess';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import CloseIcon from '@material-ui/icons/Close';
 import TimelineIcon from '@material-ui/icons/Timeline';
 import Rating from '@material-ui/lab/Rating';
@@ -20,10 +18,13 @@ class ResultCard extends Component {
         var percentChange = ((priceList[priceList.length-1].price-priceList[priceList.length-2].price)*100/priceList[priceList.length-2].price).toFixed(2)
         return (
                 <div data-aos="fade-up" data-aos-offset="50">
-                <div className="resultCard" style={{height: this.state.showGraph? '400px': '170px'}}>
+                <div className="resultCard" style={{height: this.state.showGraph? '400px': '170px'}}>   
+                { this.props.product.available? <h4 style={{ color:'white', height:'18px', float:'left', marginTop:'-25px', zIndex: '1',background: 'linear-gradient(to bottom right, #23D932, #2fD932)', padding:'8px',  marginLeft: '-30px', position:'absolute'}}>In Stock</h4>
+                :<h4 style={{ color:'white', height:'18px', float:'left', marginTop:'-25px', zIndex: '1',background: 'linear-gradient(to bottom right, #ff410c, #fa410c)', padding:'8px',  marginLeft: '-30px', position:'absolute'}}>Out of Stock</h4>}
+
                 <div className="flex-containter" style={{  flex:'wrap', flexWrap: 'row',display: 'flex'}}>
                 
-                <div className="imgClass" style={{  display: 'inline-block',padding: '5px 10px 10px 10px'}}>
+                <div className="imgClass" style={{  display: 'inline-block',padding: '5px 10px 10px 10px', zIndex: '0'}}>
                     <img className="resultCardImg" style={{width: '160px', height: '160px'}}src={this.props.product.image}></img>
                 </div>
                 
@@ -35,7 +36,8 @@ class ResultCard extends Component {
                 <Rating name="read-only" value={this.props.product.rating}  precision={0.1} readOnly />
                 </div>
                 <br></br>
-                <div style={{marginTop: this.props.product.title.length <= 78 ? '49px' : this.props.product.title.length <= 2*78 ? '23px': '-2px', float:'bottom'}}>
+                <div style={{ bottom: '0', position: 'relative'}}>
+                <div style={{marginBottom:'10px'}}>
                 <Button
                 variant="contained"
                 href={this.props.product.URL}
@@ -47,6 +49,7 @@ class ResultCard extends Component {
                     onClick = {() => this.setState({showGraph:!this.state.showGraph})}
                     startIcon={this.state.showGraph? <CloseIcon style={{color:"#ff410c", fontSize: 27, fontWeight: 900}}/>:<TimelineIcon style={{color:"rgb(84, 209, 0)", fontSize: 27, fontWeight: 900}}/>}>{this.state.showGraph? "Close Chart":"View Chart"}
                 </Button>
+                </div>
                 </div>
                 </div>
                 
