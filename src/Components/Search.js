@@ -43,11 +43,8 @@ class Search extends Component {
           this.setState({
             response:true
           });
-          console.log(this.data)
-          // jsonData is parsed json object received from url
         })
         .catch((error) => {
-          // handle your errors here
           console.error(error)
         })
     }

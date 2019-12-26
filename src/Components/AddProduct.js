@@ -8,12 +8,38 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import CloseIcon from '@material-ui/icons/Close';
 import CheckIcon from '@material-ui/icons/Check';
+import axios from 'axios';
 
 class AddProduct extends Component {
     state={
       addProduct: false,
       show: false,
+      added: false,
+      error: false,
+      product: '',
+      email: ''
     }
+
+    submit (){
+        axios.post('http://127.0.0.1:5000/addProduct',{
+            title: this.state.product,
+            email: this.state.email
+        })
+        .then(res => {
+            this.setState({
+                product: '',
+                email: '',
+                show: false,
+                added: true
+                })
+            })
+            .catch(err => {
+				this.setState({
+					error: true
+				})
+			})
+        }
+
       render() {
           return (
             <div >
@@ -31,6 +57,7 @@ class AddProduct extends Component {
                     type="product"
                     autoComplete="off"
                     fullWidth
+                    onChange = {(event) => this.setState({product:event.target.value})}
                 />
                 <TextField
                     margin="dense"
@@ -39,18 +66,20 @@ class AddProduct extends Component {
                     type="email"
                     autoComplete="on"
                     fullWidth
+                    onChange = {(event) => this.setState({email:event.target.value})}
                 />
                 </DialogContent>
                 <DialogActions>
                 <Button 
-                    onClick = {() => this.setState({show:!this.state.show})}
-                    style={{fontFamily:'avenir, sans-serif', fontWeight:'700', padding:'5px 10px 5px 10px'}}>
-                         {/* <CloseIcon style={{color:"#ff410c", fontSize: 27, fontWeight: 900}}/> */}
+                    style={{fontFamily:'avenir, sans-serif', fontWeight:'700', padding:'5px 10px 5px 10px'}}
+                    onClick = {() => this.setState({show:!this.state.show})}>
+                    {/* <CloseIcon style={{color:"#ff410c", fontSize: 27, fontWeight: 900}}/> */}
                     Cancel
                 </Button>
                 <Button 
                 // onClick={handleClose} 
-                style={{fontFamily:'avenir, sans-serif', fontWeight:'700',backgroundColor:'#FEBD69', padding:'5px 20px 5px 20px'}}>
+                    style={{fontFamily:'avenir, sans-serif', fontWeight:'700',backgroundColor:'#FEBD69', padding:'5px 20px 5px 20px'}}
+                    onClick={this.submit.bind(this)}>
                     Submit
                     {/* <CheckIcon style={{ fontSize: 20, fontWeight: 900}}/> */}
                 </Button>
@@ -59,7 +88,7 @@ class AddProduct extends Component {
 
             <Button variant='contained' style={{marginTop:"0px", borderRadius:'100px', background:'#FEBD69', fontFamily:'Avenir, sans-serif', fontWeight:'900', textTransform:'none', fontSize:'20px', padding:'0px 25px 0px 25px', transition: '0.2s'}} 
         // onClick={this.handleEvent.bind(this)}
-            onClick={() => this.setState({show:true})}>Add Product</Button>
+            onClick={() => this.setState({show:true, added: false, error: false})}>Add Product</Button>
             </div>
            );            
       }
