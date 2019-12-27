@@ -47,7 +47,7 @@ class AddProduct extends Component {
                 <DialogTitle id="form-dialog-title">Add Your Own Product</DialogTitle>
                 <DialogContent>
                 <DialogContentText>
-                    To add a product to watch enter the name of the product and your email down below. When the product's price change by 5% you will recieve an email.
+                    To add a product to watch enter the name of the product and your email down below. When the product's price changes by 5% you will receive an email.
                 </DialogContentText>
                 <TextField
                     autoFocus
