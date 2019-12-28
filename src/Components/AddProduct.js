@@ -10,10 +10,22 @@ import CloseIcon from '@material-ui/icons/Close';
 import CheckIcon from '@material-ui/icons/Check';
 import axios from 'axios';
 import IsEmail from 'isemail';
+import ErrorIcon from '@material-ui/icons/Error';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import SnackbarContent from '@material-ui/core/SnackbarContent';
+import Typography from '@material-ui/core/Typography';
 
 class AddProduct extends Component {
     state={
+      snackSuccess: false,
+      snackError: false,
       emailValid: true,
+      emptyEmail: false,
+      emptyProduct: false,
       show: false,
       added: false,
       error: false,
@@ -22,8 +34,16 @@ class AddProduct extends Component {
     }
 
     submit (){
-        if (IsEmail.validate(this.state.email, {errorLevel: true}) <=1){
-            axios.post('http://127.0.0.1:5000/addProduct',{
+        this.setState({
+            emptyProduct: this.state.product == "",
+            emptyEmail: this.state.email == ""
+            })
+        if (IsEmail.validate(this.state.email, {errorLevel: true}) >1)
+            this.setState({
+                emailValid: false
+                })
+        else {
+            axios.post('https://pricewatch-antonk.herokuapp.com/addProduct',{
                 title: this.state.product,
                 email: this.state.email
             })
@@ -32,22 +52,20 @@ class AddProduct extends Component {
                     product: '',
                     email: '',
                     show: false,
-                    added: true
+                    added: true,
+                    snackSuccess: true,
                     })
                 })
                 .catch(err => {
                     this.setState({
                         error: true,
-                        show: false
+                        show: false,
+                        snackError: true,
                     })
                 })
             }
-        else
-        this.setState({
-            emailValid: false
-            })
+        }
             
-    }
 
       render() {
           return (
@@ -60,6 +78,8 @@ class AddProduct extends Component {
                 </DialogContentText>
                 <TextField
                     autoFocus
+                    error={this.state.emptyProduct}
+                    helperText={this.state.emptyProduct?"Enter Product":""}
                     margin="dense"
                     id="name"
                     label="Product Name"
@@ -69,8 +89,8 @@ class AddProduct extends Component {
                     onChange = {(event) => this.setState({product:event.target.value})}
                 />
                 <TextField
-                    error={!this.state.emailValid}
-                    helperText={!this.state.emailValid?"Invalid Email":""}
+                    error={this.state.emptyEmail || !this.state.emailValid}
+                    helperText={this.state.emptyEmail?"Enter Email":!this.state.emailValid?"Invalid Email":""}
                     margin="dense"
                     id="name"
                     label="Email"
@@ -100,7 +120,50 @@ class AddProduct extends Component {
             <Button variant='contained' style={{marginTop:"0px", borderRadius:'100px', background:'#FEBD69', fontFamily:'Avenir, sans-serif', fontWeight:'900', textTransform:'none', fontSize:'20px', padding:'0px 25px 0px 25px', transition: '0.2s'}} 
         // onClick={this.handleEvent.bind(this)}
             onClick={() => this.setState({show:true, added: false, error: false, emailValid: true})}>Add Product</Button>
+
+
+
+
+        <Snackbar
+            style={{fontFamily:'Avenir, sans-serif', fontWeight:'900'}}
+            anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
+            variant="error"
+            autoHideDuration={6000}
+            open={this.state.snackSuccess}
+            >
+            {/* <CheckCircleIcon/> */}
+            <SnackbarContent style={{backgroundColor:'rgb(80, 209, 0)',fontFamily:'Avenir, sans-serif', fontWeight:'900', fontSize: 16}}
+            message="Success, Product was added"
+            action={ <IconButton
+                key="close"
+                aria-label="close"
+                onClick={() => this.setState({snackSuccess:false})}
+                ><CloseIcon style={{color:'white'}}/>
+                </IconButton>}
+            />
+            </Snackbar>
+
+            <Snackbar
+            anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
+            variant="error"
+            autoHideDuration={6000}
+            open={this.state.snackError}
+            >
+            {/* <ErrorIcon/> */}
+            <SnackbarContent style={{backgroundColor:'red',fontFamily:'Avenir, sans-serif', fontWeight:'900', fontSize: 16}}
+
+            message={"Error, Product was not added"}
+            action={ <IconButton
+                key="close"
+                aria-label="close"
+                onClick={() => this.setState({snackError:false})}
+                ><CloseIcon style={{color:'white'}}/>
+                </IconButton>}
+            />
+            </Snackbar>
+
             </div>
+
            );            
       }
   }
