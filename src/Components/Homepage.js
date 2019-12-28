@@ -17,21 +17,6 @@ class Homepage extends Component{
   state = {
     response:false
   }
-
-  //Getting list from the backend
-//   componentDidMount() {
-//     axios.get('https://devkit-backend.herokuapp.com/softwareTools')
-//       .then((res) => {
-//         this.list=res.data;
-//         this.setState({
-//           response:true
-//         });
-
-//       })
-//       .catch(err => {
-//         console.log(err);
-//       })
-//   }
   
   render() {
     return(
