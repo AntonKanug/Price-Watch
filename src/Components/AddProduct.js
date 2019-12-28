@@ -9,10 +9,11 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import CloseIcon from '@material-ui/icons/Close';
 import CheckIcon from '@material-ui/icons/Check';
 import axios from 'axios';
+import IsEmail from 'isemail';
 
 class AddProduct extends Component {
     state={
-      addProduct: false,
+      emailValid: true,
       show: false,
       added: false,
       error: false,
@@ -21,24 +22,32 @@ class AddProduct extends Component {
     }
 
     submit (){
-        axios.post('http://127.0.0.1:5000/addProduct',{
-            title: this.state.product,
-            email: this.state.email
-        })
-        .then(res => {
-            this.setState({
-                product: '',
-                email: '',
-                show: false,
-                added: true
-                })
+        if (IsEmail.validate(this.state.email, {errorLevel: true}) <=1){
+            axios.post('http://127.0.0.1:5000/addProduct',{
+                title: this.state.product,
+                email: this.state.email
             })
-            .catch(err => {
-				this.setState({
-					error: true
-				})
-			})
-        }
+            .then(res => {
+                this.setState({
+                    product: '',
+                    email: '',
+                    show: false,
+                    added: true
+                    })
+                })
+                .catch(err => {
+                    this.setState({
+                        error: true,
+                        show: false
+                    })
+                })
+            }
+        else
+        this.setState({
+            emailValid: false
+            })
+            
+    }
 
       render() {
           return (
@@ -60,6 +69,8 @@ class AddProduct extends Component {
                     onChange = {(event) => this.setState({product:event.target.value})}
                 />
                 <TextField
+                    error={!this.state.emailValid}
+                    helperText={!this.state.emailValid?"Invalid Email":""}
                     margin="dense"
                     id="name"
                     label="Email"
@@ -88,7 +99,7 @@ class AddProduct extends Component {
 
             <Button variant='contained' style={{marginTop:"0px", borderRadius:'100px', background:'#FEBD69', fontFamily:'Avenir, sans-serif', fontWeight:'900', textTransform:'none', fontSize:'20px', padding:'0px 25px 0px 25px', transition: '0.2s'}} 
         // onClick={this.handleEvent.bind(this)}
-            onClick={() => this.setState({show:true, added: false, error: false})}>Add Product</Button>
+            onClick={() => this.setState({show:true, added: false, error: false, emailValid: true})}>Add Product</Button>
             </div>
            );            
       }
