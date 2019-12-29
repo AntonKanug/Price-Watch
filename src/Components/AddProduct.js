@@ -38,7 +38,7 @@ class AddProduct extends Component {
             emptyProduct: this.state.product == "",
             emptyEmail: this.state.email == ""
             })
-        if (IsEmail.validate(this.state.email, {errorLevel: true}) >1)
+        if (IsEmail.validate(this.state.email, {errorLevel: true}) >0)
             this.setState({
                 emailValid: false
                 })
