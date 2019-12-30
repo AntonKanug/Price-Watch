@@ -7,13 +7,17 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import CloseIcon from '@material-ui/icons/Close';
-import Snackbar from '@material-ui/core/Snackbar';
-import SnackbarContent from '@material-ui/core/SnackbarContent';
-import IconButton from '@material-ui/core/IconButton';
-import LinearProgress from '@material-ui/core/LinearProgress';
-import { withStyles } from '@material-ui/core/styles';
+import CheckIcon from '@material-ui/icons/Check';
 import axios from 'axios';
 import IsEmail from 'isemail';
+import ErrorIcon from '@material-ui/icons/Error';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import SnackbarContent from '@material-ui/core/SnackbarContent';
+import Typography from '@material-ui/core/Typography';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import { withStyles } from '@material-ui/core/styles';
 
 
 const StyledBar = withStyles({
@@ -42,15 +46,17 @@ class AddProduct extends Component {
     }
 
     submit (){
+        var emptyEmail = this.state.email == ""
+        var emptyProduct = this.state.product == ""
         this.setState({
-            emptyProduct: this.state.product == "",
-            emptyEmail: this.state.email == ""
+            emptyProduct: emptyProduct,
+            emptyEmail: emptyEmail
             })
         if (IsEmail.validate(this.state.email, {errorLevel: true}) >0)
             this.setState({
                 emailValid: false
                 })
-        else {
+        else if (!emptyProduct && !emptyEmail) {
             this.setState({
                 show: false,
                 progress: true,
@@ -72,7 +78,7 @@ class AddProduct extends Component {
                         error: true,
                         show: false,
                         snackError: true,
-                        progess: false
+                        progress: false
                     })
                 })
             }
@@ -118,27 +124,25 @@ class AddProduct extends Component {
                     <Button 
                         style={{fontFamily:'avenir, sans-serif', fontWeight:'700', padding:'5px 10px 5px 10px'}}
                         onClick = {() => this.setState({show:!this.state.show})}>
-                        {/* <CloseIcon style={{color:"#ff410c", fontSize: 27, fontWeight: 900}}/> */}
                         Cancel
                     </Button>
                     <Button 
                         style={{fontFamily:'avenir, sans-serif', fontWeight:'700',backgroundColor:'#FEBD69', padding:'5px 20px 5px 20px'}}
                         onClick={this.submit.bind(this)}>
                         Submit
-                        {/* <CheckIcon style={{ fontSize: 20, fontWeight: 900}}/> */}
                     </Button>
                 </DialogActions>
             </Dialog>
-
             <Button variant='contained' style={{marginTop:"0px", borderRadius:'100px', background:'#FEBD69', fontFamily:'Avenir, sans-serif', fontWeight:'900', textTransform:'none', fontSize:'20px', padding:'0px 25px 0px 25px', transition: '0.2s'}} 
             onClick={() => this.setState({show:true, added: false, error: false, emailValid: true})}>Add Product</Button>
-
             <Snackbar
                 style={{fontFamily:'Avenir, sans-serif', fontWeight:'900'}}
                 anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
                 variant="error"
+                autoHideDuration={6000}
                 open={this.state.progress}
                 >
+                {/* <CheckCircleIcon/> */}
                 <SnackbarContent style={{backgroundColor:'white',fontFamily:'Avenir, sans-serif', fontWeight:'900', fontSize: 16}}
                 message={<div ><h4 style={{display:'inline', color:'black'}}>Request Sent, Please Wait</h4><StyledBar variant="query"/></div>}
                 action={ <IconButton
@@ -154,6 +158,7 @@ class AddProduct extends Component {
                 style={{fontFamily:'Avenir, sans-serif', fontWeight:'900'}}
                 anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
                 variant="error"
+                autoHideDuration={6000}
                 open={this.state.snackSuccess}
                 >
                 <SnackbarContent style={{backgroundColor:'rgb(80, 209, 0)',fontFamily:'Avenir, sans-serif', fontWeight:'900', fontSize: 16}}
@@ -170,6 +175,7 @@ class AddProduct extends Component {
             <Snackbar
                 anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
                 variant="error"
+                autoHideDuration={6000}
                 open={this.state.snackError}
                 >
                 <SnackbarContent style={{backgroundColor:'red',fontFamily:'Avenir, sans-serif', fontWeight:'900', fontSize: 16}}
@@ -182,10 +188,8 @@ class AddProduct extends Component {
                     </IconButton>}
                 />
             </Snackbar>
-        </div>
-
-        );            
-    }
-}
-
+            </div>
+           );            
+      }
+  }
   export default AddProduct
