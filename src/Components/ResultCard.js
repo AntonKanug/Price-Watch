@@ -13,11 +13,16 @@ class ResultCard extends Component {
     state={
         showGraph:false
     }
+    
     render() {
         var priceList = this.props.product.priceList
-        var percentChange = 0
+        var percentChange = (0).toFixed(2)
         if (priceList.length >= 2)
             percentChange = ((priceList[priceList.length-1].price-priceList[priceList.length-2].price)*100/priceList[priceList.length-2].price).toFixed(2)
+        if (this.state.showGraph)
+            document.title = "Price Watch | " + this.props.product.title;
+        else
+            document.title = "Price Watch"
         return (
                 <div data-aos="fade-up" data-aos-offset="50">
                 <div className="resultCard" style={{height: this.state.showGraph? '400px': '170px'}}>   
@@ -48,7 +53,9 @@ class ResultCard extends Component {
                 endIcon={<CallMadeIcon/>}>View Product</Button>
                 <Button
                     style={{float:'right', fontFamily:'avenir, sans-serif', fontWeight:'700'}}
-                    onClick = {() => this.setState({showGraph:!this.state.showGraph})}
+                    onClick = {() => {
+                        this.setState({showGraph:!this.state.showGraph}) 
+                    }}
                     startIcon={this.state.showGraph? <CloseIcon style={{color:"#ff410c", fontSize: 27, fontWeight: 900}}/>:<TimelineIcon style={{color:"rgb(84, 209, 0)", fontSize: 27, fontWeight: 900}}/>}>{this.state.showGraph? "Close Chart":"View Chart"}
                 </Button>
                 </div>

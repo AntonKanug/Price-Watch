@@ -84,7 +84,8 @@ class AddProduct extends Component {
             
 
       render() {
-          const { classes } = this.props;
+        if (this.state.show) document.title = "Price Watch | Add Product";
+        else document.title = "Price Watch"
           return (
             <div >
             <Dialog open={this.state.show} aria-labelledby="form-dialog-title">
