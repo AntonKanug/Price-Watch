@@ -79,6 +79,7 @@ class Search extends Component {
             <Results products={filteredData}/>:
             <div style={{textAlign: 'center', marginTop:'100px'}}>
               <CircularProgress style={{color:"#F77313"}} size={50}/>
+              <h3 className="subTitle" style={{fontWeight:900, fontSize:20, marginLeft:'10px'}}>Unidling Backend Server</h3>
             </div>}
           </div>
         </div>
