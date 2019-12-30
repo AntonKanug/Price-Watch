@@ -66,12 +66,12 @@ class Graphs extends Component {
                 /> 
                 </div>
                 <div style={{display: 'inline-block', marginTop: '8px', float:'right', paddingRight:'15px', textAlign:'right'}}>
-                    <h6 className="resultGraphTitle">Maximum Price</h6>
-                    <h6 className="resultGraphPrice" style={{color: '#ff410c'}}>${maxPrice}</h6>
-                    <h6 className="resultGraphTitle">Minimum Price</h6>
-                    <h6 className="resultGraphPrice" style={{color: 'rgb(84, 209, 0)'}}>${minPrice}</h6>
-                    <h6 className="resultGraphTitle">Average Price</h6>
-                    <h6 className="resultGraphPrice" style={{color:'#286EF2'}}>${avgPrice}</h6>
+                    <h6 className="resultCardTitle" style={{margin:'5px', marginBottom: '1px', fontWeight:'500', fontSize:'17px'}}>Maximum Price</h6>
+                    <h6 className="resultCardTitle" style={{margin:'5px', color: '#ff410c', fontSize:'28.5px'}}>${maxPrice}</h6>
+                    <h6 className="resultCardTitle" style={{margin:'5px', marginBottom: '1px', fontWeight:'500', fontSize:'17px'}}>Minimum Price</h6>
+                    <h6 className="resultCardTitle" style={{margin:'5px', color: 'rgb(84, 209, 0)', fontSize:'28.5px'}}>${minPrice}</h6>
+                    <h6 className="resultCardTitle" style={{margin:'5px', marginBottom: '1px', fontWeight:'500', fontSize:'17px'}}>Average Price</h6>
+                    <h6 className="resultCardTitle" style={{margin:'5px', color:'#286EF2', fontSize:'28.5px'}}>${avgPrice}</h6>
                 </div>
             </div>
          );            
