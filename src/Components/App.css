@@ -97,6 +97,23 @@
   display: inline-block;
 }
 
+.resultGraphTitle{
+  color: black;
+  font-family: avenir, sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 5px;
+  margin-bottom: '1px';
+}
+
+.resultGraphPrice{
+  color: black;
+  font-family: avenir, sans-serif;
+  font-size: 28.5px;
+  font-weight: 900;
+  margin: 5px;
+}
+
 .resultCard{
   transition: 0.4s;
   align-items: center;
@@ -118,4 +135,10 @@
   font-family: 'avenir', sans-serif;
   font-weight: 700;
   background-color:'#FEBD69';
+}
+
+@media (max-width: 800px) {
+  .text-Navbar{
+    display: none;
+  }
 }
