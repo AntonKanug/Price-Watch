@@ -12,12 +12,24 @@ import axios from 'axios';
 import IsEmail from 'isemail';
 import ErrorIcon from '@material-ui/icons/Error';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import SnackbarContent from '@material-ui/core/SnackbarContent';
 import Typography from '@material-ui/core/Typography';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import { withStyles } from '@material-ui/core/styles';
+
+
+  const StyledBar = withStyles({
+    root: {
+      background: 'white',
+      color: '#00695c'
+    },
+    bar: {
+        borderRadius:10,
+        backgroundColor: '#F77313',
+      }
+  })(LinearProgress);
 
 class AddProduct extends Component {
     state={
@@ -27,7 +39,7 @@ class AddProduct extends Component {
       emptyEmail: false,
       emptyProduct: false,
       show: false,
-      added: false,
+      progress: false,
       error: false,
       product: '',
       email: ''
@@ -43,6 +55,10 @@ class AddProduct extends Component {
                 emailValid: false
                 })
         else {
+            this.setState({
+                show: false,
+                progress: true,
+                })
             axios.post('https://pricewatch-antonk.herokuapp.com/addProduct',{
                 title: this.state.product,
                 email: this.state.email
@@ -51,9 +67,8 @@ class AddProduct extends Component {
                 this.setState({
                     product: '',
                     email: '',
-                    show: false,
-                    added: true,
                     snackSuccess: true,
+                    progress: false,
                     })
                 })
                 .catch(err => {
@@ -61,6 +76,7 @@ class AddProduct extends Component {
                         error: true,
                         show: false,
                         snackError: true,
+                        progess: false
                     })
                 })
             }
@@ -68,6 +84,7 @@ class AddProduct extends Component {
             
 
       render() {
+          const { classes } = this.props;
           return (
             <div >
             <Dialog open={this.state.show} aria-labelledby="form-dialog-title">
@@ -121,8 +138,24 @@ class AddProduct extends Component {
         // onClick={this.handleEvent.bind(this)}
             onClick={() => this.setState({show:true, added: false, error: false, emailValid: true})}>Add Product</Button>
 
-
-
+        <Snackbar
+            style={{fontFamily:'Avenir, sans-serif', fontWeight:'900'}}
+            anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
+            variant="error"
+            autoHideDuration={6000}
+            open={this.state.progress}
+            >
+            {/* <CheckCircleIcon/> */}
+            <SnackbarContent style={{backgroundColor:'white',fontFamily:'Avenir, sans-serif', fontWeight:'900', fontSize: 16}}
+            message={<div ><h4 style={{display:'inline', color:'black'}}>Request Sent, Please Wait</h4><StyledBar variant="query"/></div>}
+            action={ <IconButton
+                key="close"
+                aria-label="close"
+                onClick={() => this.setState({progress:false})}
+                ><CloseIcon style={{color:'black'}}/>
+                </IconButton>}
+            />       
+            </Snackbar>
 
         <Snackbar
             style={{fontFamily:'Avenir, sans-serif', fontWeight:'900'}}
