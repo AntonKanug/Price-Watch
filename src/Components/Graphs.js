@@ -7,6 +7,7 @@ AOS.init();
 class Graphs extends Component {
 
     render() {
+        var takeRight = require('lodash.takeright');
         var prices = [], dates = [];
         var minPrice = this.props.productInfo.priceList[0].price;
         var maxPrice = minPrice;
@@ -19,7 +20,8 @@ class Graphs extends Component {
           var minPrice = Math.min(...prices).toFixed(2)
           var maxPrice = Math.max(...prices).toFixed(2)
           avgPrice = (avgPrice/i).toFixed(2)
-
+          prices = takeRight(prices, 14)
+          dates = takeRight(dates, 14)
           const data = (canvas) => {
             const ctx = canvas.getContext("2d")
             var gradientstroke = ctx.createLinearGradient(700, 0, 0, 0);
