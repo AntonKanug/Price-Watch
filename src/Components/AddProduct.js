@@ -31,6 +31,16 @@ bar: {
     }
 })(LinearProgress);
 
+const StyledTextField = withStyles({
+    root: {
+      '& label.Mui-focused': {
+        color: '#FEBD69',
+      },
+      '& .MuiInput-underline:after': {
+        borderBottomColor: '#FEBD69',
+      }
+    }
+})(TextField);
 class AddProduct extends Component {
     state={
       snackSuccess: false,
@@ -91,32 +101,36 @@ class AddProduct extends Component {
           return (
             <div >
             <Dialog open={this.state.show} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">Add Your Own Product</DialogTitle>
+                <DialogTitle disableTypography='true'id="form-dialog-title" style={{fontFamily:'Avenir, sans-serif', fontWeight:900, fontSize:'27px', lineHeight:1.2, paddingBottom:'3px'}}>Add Your Own Product</DialogTitle>
                 <DialogContent>
-                    <DialogContentText>
+                    <DialogContentText disableTypography='true' style={{fontFamily:'Avenir, sans-serif', fontWeight:500, fontSize:'18px', lineHeight:1.25}}>
                         To add a product to watch enter the name of the product and your email down below. When the product's price changes by 5% you will receive an email.
                     </DialogContentText>
-                    <TextField
+                    <StyledTextField
                         autoFocus
                         error={this.state.emptyProduct}
                         helperText={this.state.emptyProduct?"Enter Product":""}
                         margin="dense"
-                        id="name"
+                        id="item"
                         label="Product Name"
                         type="product"
                         autoComplete="off"
                         fullWidth
+                        InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, sans-serif', fontWeight:500, borderColor: 'red'} }} 
+                        InputProps={{ style: {fontFamily:'Avenir, sans-serif', fontWeight:700} }} 
                         onChange = {(event) => this.setState({product:event.target.value})}
                     />
-                    <TextField
+                    <StyledTextField
                         error={this.state.emptyEmail || !this.state.emailValid}
                         helperText={this.state.emptyEmail?"Enter Email":!this.state.emailValid?"Invalid Email":""}
                         margin="dense"
-                        id="name"
+                        id="email"
                         label="Email"
                         type="email"
                         autoComplete="on"
                         fullWidth
+                        InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, sans-serif', fontWeight:500} }} 
+                        InputProps={{ style: {fontFamily:'Avenir, sans-serif', fontWeight:700} }} 
                         onChange = {(event) => this.setState({email:event.target.value})}
                     />
                 </DialogContent>
@@ -127,7 +141,7 @@ class AddProduct extends Component {
                         Cancel
                     </Button>
                     <Button 
-                        style={{fontFamily:'avenir, sans-serif', fontWeight:'700',backgroundColor:'#FEBD69', padding:'5px 20px 5px 20px'}}
+                        style={{fontFamily:'avenir, sans-serif', fontWeight:'700',backgroundColor:'#FEBD69', padding:'5px 20px 5px 20px', width:'100px'}}
                         onClick={this.submit.bind(this)}>
                         Submit
                     </Button>
