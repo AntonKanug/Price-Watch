@@ -18,8 +18,13 @@ class ResultCard extends Component {
         var priceList = this.props.product.priceList
         var listLen = priceList.length
         var percentChange = (0).toFixed(2)
+        var currency
         if (priceList.length > 1)
             percentChange = ((priceList[listLen-1].price-priceList[listLen-2].price)*100/priceList[listLen-2].price).toFixed(2)
+        if (this.props.product.URL.slice(19,21)==="ca")
+            currency = "CAD"
+        else if (this.props.product.URL.slice(19,22)==="com")
+            currency = "USD"
         if (this.state.showGraph) document.title = "Price Watch | " + this.props.product.title;
         else document.title = "Price Watch"
         return (
@@ -34,7 +39,7 @@ class ResultCard extends Component {
                         </div>
                         <div className="resultCardContent" style={{width: '800px', paddingLeft: '20px'}}>
                             <h6 className="resultCardTitle" style={{margin: '5px', width: '800px'}}>{this.props.product.title}</h6>
-                            <h6 className="resultCardPrice" style={{margin:'5px', marginTop:'0px'}}>${priceList[listLen-1].price.toFixed(2)}<l style={{fontWeight:900, fontSize:19, color: percentChange>0? "#ff410c": percentChange<0? "rgb(84, 209, 0)": "#b3b1b0"}}> ({(percentChange>=0? "+":"") + percentChange}%)</l></h6>
+                            <h6 className="resultCardPrice" style={{margin:'5px', marginTop:'0px'}}>{currency + " $"+ priceList[listLen-1].price.toFixed(2)}<l style={{fontWeight:900, fontSize:19, color: percentChange>0? "#ff410c": percentChange<0? "rgb(84, 209, 0)": "#b3b1b0"}}> ({(percentChange>=0? "+":"") + percentChange}%)</l></h6>
                             <div style={{display:'inline-block', float:'right'}}>
                                 <Rating name="read-only" value={this.props.product.rating} precision={0.1} readOnly />
                             </div>
