@@ -14,7 +14,7 @@ class Graphs extends Component {
         var i, avgPrice = 0;
         for (i = 0; i < this.props.productInfo.priceList.length; i++) { 
             prices[i] = this.props.productInfo.priceList[i].price
-            dates[i] = this.props.productInfo.priceList[i].dateTime.slice(5, 10)
+            dates[i] = this.props.productInfo.priceList[i].dateTime.slice(4, 10)
             avgPrice += prices[i]
           }
           var minPrice = Math.min(...prices).toFixed(2)
