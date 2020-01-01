@@ -104,15 +104,15 @@ class AddProduct extends Component {
                 <DialogTitle disableTypography='true'id="form-dialog-title" style={{fontFamily:'Avenir, sans-serif', fontWeight:900, fontSize:'27px', lineHeight:1.2, paddingBottom:'3px'}}>Add Your Own Product</DialogTitle>
                 <DialogContent>
                     <DialogContentText disableTypography='true' style={{fontFamily:'Avenir, sans-serif', fontWeight:500, fontSize:'18px', lineHeight:1.25}}>
-                        To add a product to watch enter the name of the product and your email down below. When the product's price changes by 5% you will receive an email.
+                        To add a product to watch enter the Amazon URL or name of the product and your Email down below. When the product's price changes by 5% you will receive an email.
                     </DialogContentText>
                     <StyledTextField
                         autoFocus
                         error={this.state.emptyProduct}
-                        helperText={this.state.emptyProduct?"Enter Product":""}
+                        helperText={this.state.emptyProduct?"Enter Product URL or Name":""}
                         margin="dense"
                         id="item"
-                        label="Product Name"
+                        label="Product URL or Name"
                         type="product"
                         autoComplete="off"
                         fullWidth

@@ -19,7 +19,7 @@ class Homepage extends Component{
           <div style={{marginTop:'20px', maxWidth:'550px'}}>
             <h1 className="mainTitle" style={{ marginLeft:'-10px'}}>Price</h1>
             <h1 className="mainTitle" style={{ marginLeft:'-10px', marginTop: '-50px'}}>Watch</h1>
-            <h3 className="subTitle" style={{marginTop:'-40px', marginLeft:'10px'}}>Search and Track prices of your favourite items from <b>amazon.ca</b></h3>
+            <h3 className="subTitle" style={{marginTop:'-40px', marginLeft:'10px'}}>Search and Track prices of your favourite products from <b>Amazon</b></h3>
           </div>
           <div style={{maxWidth:'500px'}}>
             <img src={'assets/homeImg.png'} className='mainImage' alt=""></img>
