@@ -8,6 +8,7 @@ import axios from 'axios';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Results from './Results';
+import SkeletonCard from './SkeletonCard';
 AOS.init();
 
 class Search extends Component {
@@ -70,10 +71,7 @@ class Search extends Component {
             <div style={{ alignItems: 'center',   margin: 'auto'}}>
             {this.data!=null? 
               <Results products={filteredData}/>:
-              <div style={{textAlign: 'center', marginTop:'100px'}}>
-                <CircularProgress style={{color:"#F77313"}} size={50}/>
-                <h3 className="subTitle" style={{fontWeight:900, fontSize:20, marginLeft:'10px'}}>Unidling Backend Server</h3>
-              </div>}
+                <SkeletonCard/>}
             </div>
           </div>
          )            

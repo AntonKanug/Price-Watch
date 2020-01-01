@@ -1,0 +1,49 @@
+import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
+import CallMadeIcon from '@material-ui/icons/CallMade';
+import CloseIcon from '@material-ui/icons/Close';
+import TimelineIcon from '@material-ui/icons/Timeline';
+import Rating from '@material-ui/lab/Rating';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Graphs from './Graphs';
+import Skeleton from '@material-ui/lab/Skeleton';
+
+AOS.init();
+class SkeletonCard extends Component {    
+    render() {
+        var dummy = [0,1,2,3];
+        return (
+            <div className="results"  data-aos="fade-up" data-aos-offset="50" >
+            {dummy.map((item, index) => (
+            <div data-aos="fade-up" data-aos-offset="50">
+                <div className="resultCard" style={{height:'170px'}}>
+                    <Skeleton  variant="rect" style={{float: 'left', marginTop: '-25px', marginLeft: '-30px', position: 'absolute'}} height={30} width={90}/>
+                    <div className="flex-containter" style={{ flex: 'wrap', flexWrap: 'row',display: 'flex'}}>
+                        <div className="imgClass" style={{ display: 'inline-block',padding: '5px 10px 10px 10px', zIndex: '0'}} >
+                            <Skeleton  variant="rect" className="resultCardImg" style={{width: '160px', height: '160px'}}/>
+                        </div>
+                        <div className="resultCardContent" style={{width: '800px', paddingLeft: '20px'}}>
+                            <Skeleton  variant="rect"  style={{margin: '5px'}} width={800} height={26}/>
+                            <Skeleton  variant="rect"  style={{margin: '5px', display:'inline-block'}} width={500} height={26}/>
+                            <div>
+                                <Skeleton  variant="rect" style={{margin: '5px', display:'inline-block'}} width={200} height={35} />
+                                <Skeleton  variant="rect" style={{margin: '5px', float:'right', display:'inline-block'}} width={150} height={26}/>
+                            </div>
+                            <br></br>
+                            <div style={{ bottom: '0', position: 'relative', margin:'5px',marginTop:'-13px'}}>
+                                <div style={{marginBottom: '10px'}}>
+                                    <Skeleton  variant="rect"   style={{display: 'inline-block'}} width={150} height ={40}/>
+                                    <Skeleton  variant="rect" style={{float:'right', }} width={150} height={40}/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            ))}
+            </div>);            
+    }
+}
+
+export default SkeletonCard
