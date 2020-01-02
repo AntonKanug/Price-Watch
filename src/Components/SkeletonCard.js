@@ -18,10 +18,12 @@ class SkeletonCard extends Component {
             {dummy.map((item, index) => (
             <div data-aos="fade-up" data-aos-offset="50">
                 <div className="resultCard" style={{height:'170px'}}>
-                    <Skeleton  variant="rect" style={{float: 'left', marginTop: '-25px', marginLeft: '-30px', position: 'absolute'}} height={30} width={90}/>
+                    <div  variant="rect" style={{float: 'left', marginTop: '-25px', marginLeft: '-30px', position: 'absolute', background:'white', height:'30px', width:'90px', padding:'7px',zIndex:1}}>
+                    <Skeleton  variant="rect" height={30}/>
+                        </div>
                     <div className="flex-containter" style={{ flex: 'wrap', flexWrap: 'row',display: 'flex'}}>
                         <div className="imgClass" style={{ display: 'inline-block',padding: '5px 10px 10px 10px', zIndex: '0'}} >
-                            <Skeleton  variant="rect" className="resultCardImg" style={{width: '160px', height: '160px'}}/>
+                            <Skeleton  variant="rect" className="resultCardImg" style={{width: '160px', height: '160px', zIndex:0}}/>
                         </div>
                         <div className="resultCardContent" style={{width: '800px', paddingLeft: '20px'}}>
                             <Skeleton  variant="rect"  style={{margin: '5px'}} width={800} height={26}/>
