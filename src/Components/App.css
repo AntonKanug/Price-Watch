@@ -1,13 +1,15 @@
-    
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,900&display=swap');
+
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 }
+
 .mainTitle{
   font-size:180px; 
-  font-family:'Avenir', 'Helvetica Neue', sans-serif; 
+  font-family: 'Avenir','Nunito Sans', 'Helvetica Neue', sans-serif; 
   font-weight:900;
   height: 200px;
   color: rgb(13, 17, 22);
@@ -82,7 +84,7 @@
 
 .resultCardTitle{
   color: black;
-  font-family: avenir, sans-serif;
+  font-family: avenir,'Nunito Sans', sans-serif;
   font-size: 20px;
   font-weight: 900;
   margin: 5px;
@@ -90,7 +92,7 @@
 
 .resultCardPrice{
   color: black;
-  font-family: avenir, sans-serif;
+  font-family: avenir,'Nunito Sans', sans-serif;
   font-size: 28px;
   font-weight: 900;
   margin: 5px;
@@ -99,7 +101,7 @@
 
 .resultGraphTitle{
   color: black;
-  font-family: avenir, sans-serif;
+  font-family: avenir,'Nunito Sans', sans-serif;
   font-size: 17px;
   font-weight: 500;
   margin: 5px;
@@ -108,7 +110,7 @@
 
 .resultGraphPrice{
   color: black;
-  font-family: avenir, sans-serif;
+  font-family: avenir,'Nunito Sans', sans-serif;
   font-size: 28.5px;
   font-weight: 900;
   margin: 5px;
@@ -132,7 +134,7 @@
 }
 
 .viewProduct{
-  font-family: 'avenir', sans-serif;
+  font-family: 'avenir', 'Nunito Sans', sans-serif;
   font-weight: 700;
   background-color:'#FEBD69';
 }

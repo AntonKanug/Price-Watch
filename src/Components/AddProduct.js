@@ -101,9 +101,9 @@ class AddProduct extends Component {
           return (
             <div >
             <Dialog open={this.state.show} aria-labelledby="form-dialog-title">
-                <DialogTitle disableTypography='true'id="form-dialog-title" style={{fontFamily:'Avenir, sans-serif', fontWeight:900, fontSize:'27px', lineHeight:1.2, paddingBottom:'3px'}}>Add Your Own Product</DialogTitle>
+                <DialogTitle disableTypography='true'id="form-dialog-title" style={{fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:900, fontSize:'27px', lineHeight:1.2, paddingBottom:'3px'}}>Add Your Own Product</DialogTitle>
                 <DialogContent>
-                    <DialogContentText disableTypography='true' style={{fontFamily:'Avenir, sans-serif', fontWeight:500, fontSize:'18px', lineHeight:1.25}}>
+                    <DialogContentText disableTypography='true' style={{fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500, fontSize:'18px', lineHeight:1.25}}>
                         To add a product to watch enter the Amazon URL or name of the product and your Email down below. When the product's price changes by 5% you will receive an email.
                     </DialogContentText>
                     <StyledTextField
@@ -116,8 +116,8 @@ class AddProduct extends Component {
                         type="product"
                         autoComplete="off"
                         fullWidth
-                        InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, sans-serif', fontWeight:500, borderColor: 'red'} }} 
-                        InputProps={{ style: {fontFamily:'Avenir, sans-serif', fontWeight:700} }} 
+                        InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500, borderColor: 'red'} }} 
+                        InputProps={{ style: {fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:700} }} 
                         onChange = {(event) => this.setState({product:event.target.value})}
                     />
                     <StyledTextField
@@ -129,35 +129,35 @@ class AddProduct extends Component {
                         type="email"
                         autoComplete="on"
                         fullWidth
-                        InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, sans-serif', fontWeight:500} }} 
-                        InputProps={{ style: {fontFamily:'Avenir, sans-serif', fontWeight:700} }} 
+                        InputLabelProps={{ style: {color: 'black', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:500} }} 
+                        InputProps={{ style: {fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:700} }} 
                         onChange = {(event) => this.setState({email:event.target.value})}
                     />
                 </DialogContent>
                 <DialogActions>
                     <Button 
-                        style={{fontFamily:'avenir, sans-serif', fontWeight:'700', padding:'5px 10px 5px 10px'}}
+                        style={{fontFamily:'avenir, Nunito Sans, sans-serif', fontWeight:'700', padding:'5px 10px 5px 10px'}}
                         onClick = {() => this.setState({show:!this.state.show})}>
                         Cancel
                     </Button>
                     <Button 
-                        style={{fontFamily:'avenir, sans-serif', fontWeight:'700',backgroundColor:'#FEBD69', padding:'5px 20px 5px 20px', width:'100px'}}
+                        style={{fontFamily:'avenir, Nunito Sans, sans-serif', fontWeight:'700',backgroundColor:'#FEBD69', padding:'5px 20px 5px 20px', width:'100px'}}
                         onClick={this.submit.bind(this)}>
                         Submit
                     </Button>
                 </DialogActions>
             </Dialog>
-            <Button variant='contained' style={{marginTop:"0px", borderRadius:'100px', background:'#FEBD69', fontFamily:'Avenir, sans-serif', fontWeight:'900', textTransform:'none', fontSize:'20px', padding:'0px 25px 0px 25px', transition: '0.2s'}} 
+            <Button variant='contained' style={{marginTop:"0px", borderRadius:'100px', background:'#FEBD69', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:'900', textTransform:'none', fontSize:'20px', padding:'0px 25px 0px 25px', transition: '0.2s'}} 
             onClick={() => this.setState({show:true, added: false, error: false, emailValid: true})}>Add Product</Button>
             <Snackbar
-                style={{fontFamily:'Avenir, sans-serif', fontWeight:'900'}}
+                style={{fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:'900'}}
                 anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
                 variant="error"
                 autoHideDuration={6000}
                 open={this.state.progress}
                 >
                 {/* <CheckCircleIcon/> */}
-                <SnackbarContent style={{backgroundColor:'white',fontFamily:'Avenir, sans-serif', fontWeight:'900', fontSize: 16}}
+                <SnackbarContent style={{backgroundColor:'white',fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:'900', fontSize: 16}}
                 message={<div ><h4 style={{display:'inline', color:'black'}}>Request Sent, Please Wait</h4><StyledBar variant="query"/></div>}
                 action={ <IconButton
                     key="close"
@@ -169,13 +169,13 @@ class AddProduct extends Component {
             </Snackbar>
 
             <Snackbar
-                style={{fontFamily:'Avenir, sans-serif', fontWeight:'900'}}
+                style={{fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:'900'}}
                 anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
                 variant="error"
                 autoHideDuration={6000}
                 open={this.state.snackSuccess}
                 >
-                <SnackbarContent style={{backgroundColor:'rgb(80, 209, 0)',fontFamily:'Avenir, sans-serif', fontWeight:'900', fontSize: 16}}
+                <SnackbarContent style={{backgroundColor:'rgb(80, 209, 0)',fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:'900', fontSize: 16}}
                 message="Success, Product was added"
                 action={ <IconButton
                     key="close"
@@ -192,7 +192,7 @@ class AddProduct extends Component {
                 autoHideDuration={6000}
                 open={this.state.snackError}
                 >
-                <SnackbarContent style={{backgroundColor:'red',fontFamily:'Avenir, sans-serif', fontWeight:'900', fontSize: 16}}
+                <SnackbarContent style={{backgroundColor:'red',fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:'900', fontSize: 16}}
                 message={"Error, Product was not added"}
                 action={ <IconButton
                     key="close"

@@ -46,8 +46,8 @@ class ResultCard extends Component {
                             <br></br>
                             <div style={{ bottom: '0', position: 'relative'}}>
                                 <div style={{marginBottom: '10px'}}>
-                                    <Button variant="contained" href={this.props.product.URL} target="_blank" style={{fontFamily: 'avenir, sans-serif', fontWeight: '700',backgroundColor: '#FEBD69'}} endIcon={<CallMadeIcon/>}>View Product</Button>
-                                    <Button style={{float: 'right', fontFamily: 'avenir, sans-serif', fontWeight: '700'}} 
+                                    <Button variant="contained" href={this.props.product.URL} target="_blank" style={{fontFamily: 'avenir, Nunito Sans, sans-serif', fontWeight: '700',backgroundColor: '#FEBD69'}} endIcon={<CallMadeIcon/>}>View Product</Button>
+                                    <Button style={{float: 'right', fontFamily: 'avenir, Nunito Sans, sans-serif', fontWeight: '700'}} 
                                             onClick={ ()=>{ this.setState({showGraph:!this.state.showGraph}) }} 
                                             startIcon={this.state.showGraph? 
                                                 <CloseIcon style={{color: "#ff410c", fontSize: 27, fontWeight: 900}}/>:

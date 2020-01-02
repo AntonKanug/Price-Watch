@@ -58,7 +58,7 @@ class Search extends Component {
           <div data-aos="fade-up" data-aos-offset="150">
             <div className="searchBar">
               <InputBase
-                style={{paddingLeft: 10, flex: '1', fontFamily: 'avenir, sans-serif', fontSize: '23px'}}
+                style={{paddingLeft: 10, flex: '1', fontFamily: 'avenir, Nunito Sans, sans-serif', fontSize: '23px'}}
                 placeholder={placeholder}
                 inputProps={{ 'aria-label': 'search google maps' }}
                 onChange={(event)=>this.setState({textField:event.target.value})}

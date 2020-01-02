@@ -14,7 +14,7 @@ class Results extends Component {
                 )): 
                 <div style={{width:'100%', marginTop:'40px', marginBottom:'40px', justifyContent:'center', justifyItems: 'center'}}>
                     <img src={'assets/notFoundImg.png'} style={{maxWidth:'450px',textAlign:'center'}} alt="" className="center"/>
-                    <h2 style={{textAlign:'center',fontFamily:'avenir, sans-serif',fontWeight:'900', marginTop:'10px', fontSize:'35px'}}>No Products Found</h2>
+                    <h2 style={{textAlign:'center',fontFamily:'avenir, Nunito Sans, sans-serif',fontWeight:'900', marginTop:'10px', fontSize:'35px'}}>No Products Found</h2>
                 </div>}
             </div>
          );            

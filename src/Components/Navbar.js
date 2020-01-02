@@ -9,7 +9,7 @@ class Navbar extends Component {
       return (
         <AppBar position="fixed" style={{ background: "#131A22", maxHeight:"63px",}}>
           <Toolbar>
-            <Typography variant="h6" style={{ fontSize:'25px',  fontFamily:'Avenir, sans-serif', fontWeight:'900'}}>Price Watch</Typography>
+            <Typography variant="h6" style={{ fontSize:'25px',  fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:'900'}}>Price Watch</Typography>
             <img src={'/assets/logo.png'}  alt='' style={{marginLeft:'10px',height:'36px',}}></img>
             <div style={{ flexGrow:'1'}}></div>
             <p style={{ fontFamily:'Avenir, sans-serif', fontWeight:'900', fontSize:'19px', marginTop:'20px', marginRight:'10px'}} className='text-Navbar'>Want to watch a Product?</p>
