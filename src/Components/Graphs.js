@@ -17,12 +17,12 @@ class Graphs extends Component {
             dates[i] = this.props.productInfo.priceList[i].dateTime.slice(4, 10)
             avgPrice += prices[i]
           }
-          var minPrice = Math.min(...prices).toFixed(2)
-          var maxPrice = Math.max(...prices).toFixed(2)
-          avgPrice = (avgPrice/i).toFixed(2)
-          prices = takeRight(prices, 14)
-          dates = takeRight(dates, 14)
-          const data = (canvas) => {
+        minPrice = Math.min(...prices).toFixed(2)
+        maxPrice = Math.max(...prices).toFixed(2)
+        avgPrice = (avgPrice/i).toFixed(2)
+        prices = takeRight(prices, 14)
+        dates = takeRight(dates, 14)
+        const data = (canvas) => {
             const ctx = canvas.getContext("2d")
             var gradientstroke = ctx.createLinearGradient(700, 0, 0, 0);
             gradientstroke.addColorStop(0, '#FFC400');

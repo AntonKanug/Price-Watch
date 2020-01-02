@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
-import CallMadeIcon from '@material-ui/icons/CallMade';
-import CloseIcon from '@material-ui/icons/Close';
-import TimelineIcon from '@material-ui/icons/Timeline';
-import Rating from '@material-ui/lab/Rating';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Graphs from './Graphs';
 import Skeleton from '@material-ui/lab/Skeleton';
 
 AOS.init();

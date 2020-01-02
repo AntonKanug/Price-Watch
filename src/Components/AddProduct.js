@@ -7,7 +7,6 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import CloseIcon from '@material-ui/icons/Close';
-import CheckIcon from '@material-ui/icons/Check';
 import axios from 'axios';
 import IsEmail from 'isemail';
 import ErrorIcon from '@material-ui/icons/Error';
@@ -15,7 +14,6 @@ import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import SnackbarContent from '@material-ui/core/SnackbarContent';
-import Typography from '@material-ui/core/Typography';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -147,7 +145,7 @@ class AddProduct extends Component {
                     </Button>
                 </DialogActions>
             </Dialog>
-            <Button variant='contained' style={{marginTop:"0px", borderRadius:'100px', background:'#FEBD69', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:'900', textTransform:'none', fontSize:'20px', padding:'0px 25px 0px 25px', transition: '0.2s'}} 
+            <Button variant='contained' style={{marginTop:"0px", borderRadius:'100px', background:'#FEBD69', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:'900', textTransform:'none', fontSize:'20px', padding:'0px 25px 0px 25px'}} 
             onClick={() => this.setState({show:true, added: false, error: false, emailValid: true})}>Add Product</Button>
             <Snackbar
                 style={{fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:'900'}}

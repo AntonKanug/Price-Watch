@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import CallMadeIcon from '@material-ui/icons/CallMade';
 import CloseIcon from '@material-ui/icons/Close';
 import TimelineIcon from '@material-ui/icons/Timeline';
+import VisibilityIcon from '@material-ui/icons/Visibility';
 import Rating from '@material-ui/lab/Rating';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -35,7 +36,7 @@ class ResultCard extends Component {
                     <h4 style={{ color: 'white', height: '18px', float: 'left', marginTop: '-25px', zIndex: '1',background: 'linear-gradient(to bottom right, #ff410c, #fa410c)', padding: '8px', marginLeft: '-30px', position: 'absolute'}}>Out of Stock</h4>}
                     <div className="flex-containter" style={{ flex: 'wrap', flexWrap: 'row',display: 'flex'}}>
                         <div className="imgClass" style={{ display: 'inline-block',padding: '5px 10px 10px 10px', zIndex: '0'}}>
-                            <img className="resultCardImg" style={{width: '160px', height: '160px'}}src={this.props.product.image}></img>
+                            <img className="resultCardImg" style={{width: '160px', height: '160px'}} alt={this.props.product.title} src={this.props.product.image} ></img>
                         </div>
                         <div className="resultCardContent" style={{width: '800px', paddingLeft: '20px'}}>
                             <h6 className="resultCardTitle" style={{margin: '5px', width: '800px'}}>{this.props.product.title}</h6>
