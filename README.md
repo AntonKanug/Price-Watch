@@ -5,7 +5,7 @@
 
 ## Price Watch
 
-[Price Watch ↗](https://pricewatch-antonk.web.app/) is a web application to track prices of products from Amazon. Using the frontend all prices can be monitored with it's changes over time. When the price of a product changes an email is sent to user who are monitoring the price of a product. The `Add Product` feature is currently under development. [Click here for a demo of the app ↗](https://www.youtube.com/watch?v=3Q5fvYWOT_U&feature=youtu.be)
+[`Price Watch ↗`](https://pricewatch-antonk.web.app/) is a web application to track prices of products from Amazon. Using the frontend all prices can be monitored with it's changes over time. When the price of a product changes an email is sent to user who are monitoring the price of a product. The `Add Product` feature is currently under development. [Click here for a demo of the app ↗](https://www.youtube.com/watch?v=3Q5fvYWOT_U&feature=youtu.be)
 
 [Frontend ↗](https://github.com/AntonKanug/Price-Watch) Built Using: `React, JavaScript, HTML, CSS, Material, ApexCharts, Axios, npm, Adobe XD, Firebase`
 
