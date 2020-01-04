@@ -49,9 +49,9 @@ class Search extends Component {
   }
 
     render() {
-      var filteredData = this.data!=null? this.data.filter(this.filter):null
+      var filteredData = this.state.response? this.data.filter(this.filter):null
       if (filteredData!==0) this.setState.show = true
-      var placeholder = "Search for over " + (this.data!=null? this.data.length: 0) + " Products"
+      var placeholder = this.state.response? "Search for over " + this.data.length + " Products": ""
 
         return (
           <div data-aos="fade-up" data-aos-offset="150">
@@ -68,7 +68,7 @@ class Search extends Component {
               </IconButton>
             </div>
             <div style={{ alignItems: 'center',   margin: 'auto'}}>
-            {this.data!=null? 
+            {this.state.response? 
               <Results products={filteredData}/>:
                 <SkeletonCard/>}
             </div>
