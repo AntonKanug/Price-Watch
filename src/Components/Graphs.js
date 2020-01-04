@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Line } from 'react-chartjs-2'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Chart from 'react-apexcharts'
 AOS.init();
 
 class Graphs extends Component {
@@ -22,50 +22,56 @@ class Graphs extends Component {
         avgPrice = (avgPrice/i).toFixed(2)
         prices = takeRight(prices, 14)
         dates = takeRight(dates, 14)
-        const data = (canvas) => {
-            const ctx = canvas.getContext("2d")
-            var gradientstroke = ctx.createLinearGradient(700, 0, 0, 0);
-            gradientstroke.addColorStop(0, '#FFC400');
-            gradientstroke.addColorStop(1, '#F77313');
-            var gradientfill = ctx.createLinearGradient(700, 0, 0, 0);
-            gradientfill.addColorStop(0, 'rgb(255, 221, 36, 0.9)');
-            gradientfill.addColorStop(1, 'rgb(253, 119, 6, 0.9)');
-            return {
-                labels: dates,
-                datasets: [{
-                    label: 'Price',
-                    data: prices,
-                    pointBorderWidth: 2,
-                    pointHoverRadius: 2,
-                    borderColor: gradientstroke,
-                    backgroundColor: gradientfill,
-                    borderWidth: 3,
-                }]
-              }
-            }
+
+            this.state = {
+                options: {
+                    fill: {
+                        colors: [ '#faa614','#FFC400'],
+                        gradient: {
+                            enabled: true,
+                            opacityFrom:1,
+                            opacityTo: 0.6,
+                            gradientToColors:['#FFC400']
+                            }
+                        },
+                        colors: ["#ff9819"],
+                            stroke: {
+                                width: 3
+                            },
+                        dataLabels: {
+                            enabled: false
+                        },
+                        stroke: {
+                            curve: 'smooth'
+                        },
+                        chart: {
+                            fontFamily: 'Avenir, Nunito Sans, sans-serif',
+                            id: "Graph for " + this.props.productInfo.title,
+                            toolbar: {
+                                autoSelected: "pan",
+                                show: true
+                            }
+                        },
+                        markers: {
+                            size: 5,
+                            colors: ["white"],
+                            strokeColor: "#ff9819",
+                            strokeWidth: 3
+                        },
+                        xaxis: {
+                            categories: dates
+                        }
+                        },
+                        series: [{
+                            name: 'Price',
+                            data: prices
+                            }],
+                    }
 
         return (
         <div >
-            <div style={{width: '800px', height: '250px', display: 'inline-block', paddingLeft:'15px'}}>
-                <Line 
-                    width={800}
-                    height={230}
-                    data={data}
-                    options={{maintainAspectRatio: 'false',
-                    scales: {
-                        xAxes: [{
-                            gridLines: {
-                                color: "rgba(0, 0, 0, 0)",
-                            }
-                        }],
-                        yAxes: [{
-                            gridLines: {
-                                color: "rgba(0, 0, 0, 0)",
-                            }   
-                        }]
-                    }
-                }}
-                /> 
+            <div style={{width: '810px', height: '250px', display: 'inline-block', paddingLeft:'15px'}}>
+            <Chart options={this.state.options} series={this.state.series} type="area" width={800} height={240}/>
                 </div>
                 <div style={{display: 'inline-block', marginTop: '8px', float:'right', paddingRight:'15px', textAlign:'right'}}>
                     <h6 className="resultCardTitle" style={{margin:'5px', marginBottom: '1px', fontWeight:'500', fontSize:'17px'}}>Maximum Price</h6>
