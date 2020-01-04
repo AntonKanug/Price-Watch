@@ -9,8 +9,8 @@ class SkeletonCard extends Component {
         var dummy = [0,1,2,3];
         return (
             <div className="results"  data-aos="fade-up" data-aos-offset="50" >
-            {dummy.map((item, index) => (
-            <div data-aos="fade-up" data-aos-offset="50">
+            {dummy.map((item, index) => ( 
+            <div key={item} data-aos="fade-up" data-aos-offset="50">
                 <div className="resultCard" style={{height:'170px'}}>
                     <div  variant="rect" style={{float: 'left', marginTop: '-25px', marginLeft: '-30px', position: 'absolute', background:'white', height:'30px', width:'90px', padding:'7px',zIndex:1}}>
                     <Skeleton  variant="rect" height={30}/>
