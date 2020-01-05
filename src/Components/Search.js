@@ -51,7 +51,7 @@ class Search extends Component {
     render() {
       var filteredData = this.state.response? this.data.filter(this.filter):null
       if (filteredData!==0) this.setState.show = true
-      var placeholder = this.state.response? "Search for over " + this.data.length + " Products": ""
+      var placeholder = this.state.response? "Search for over " + this.data.length + " Products": "Booting Up Backend, Please Wait"
 
         return (
           <div data-aos="fade-up" data-aos-offset="150">
