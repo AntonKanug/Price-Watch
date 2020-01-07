@@ -40,7 +40,9 @@ class ResultCard extends Component {
                         </div>
                         <div className="resultCardContent" style={{width: '800px', paddingLeft: '20px'}}>
                             <h6 className="resultCardTitle" style={{margin: '5px', width: '800px'}}>{this.props.product.title}</h6>
+                            {this.props.product.available?
                             <h6 className="resultCardPrice" style={{margin:'5px', marginTop:'0px'}}>{currency + " $"+ priceList[listLen-1].price.toFixed(2)}<l style={{fontWeight:900, fontSize:19, color: percentChange>0? "#ff410c": percentChange<0? "rgb(84, 209, 0)": "#b3b1b0"}}> ({(percentChange>=0? "+":"") + percentChange}%)</l></h6>
+                            :<h6 className="resultCardPrice" style={{margin:'5px', marginTop:'0px'}}>Currently Unavailable</h6>}
                             <div style={{display:'inline-block', float:'right'}}>
                                 <Rating name="read-only" value={this.props.product.rating} precision={0.1} readOnly />
                             </div>
