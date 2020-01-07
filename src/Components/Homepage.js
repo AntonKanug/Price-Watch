@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Search from './Search';
 import Navbar from './Navbar';
+import SimpleSnackbar from './Snackbar'
 import './App.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -26,6 +27,7 @@ class Homepage extends Component{
           </div>
         </div>
         <Search/>
+        <SimpleSnackbar/>
       </div>
     )
   }
