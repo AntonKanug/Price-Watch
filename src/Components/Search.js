@@ -39,6 +39,16 @@ class Search extends Component {
     axios.get('https://pricewatch-antonk.herokuapp.com/products')
       .then((data) => {
         this.data = data.data
+        this.data.sort(function(a, b){
+          var aLen = a.priceList.length, bLen = b.priceList.length
+          if (aLen>=2 && bLen>=2){
+            var aPrice1 = a.priceList[aLen-1].price, bPrice1 = b.priceList[bLen-1].price
+            var aPrice2 = a.priceList[aLen-2].price, bPrice2 = b.priceList[bLen-2].price
+            var aChange = (aPrice1-aPrice2)*100/aPrice2, bChange = (bPrice1-bPrice2)*100/bPrice2
+            return Math.abs(bChange) - Math.abs(aChange)
+          }
+          else return 1
+        })
         this.setState({
           response:true
         });
@@ -62,7 +72,7 @@ class Search extends Component {
                 inputProps={{ 'aria-label': 'search google maps' }}
                 onChange={(event)=>this.setState({textField:event.target.value})}
               />
-              <Divider orientation="vertical" style={{height:'45px'}} />
+              <Divider orientation="vertical" style={{height:'45px', marginRight:'5px'}} />
               <IconButton type="submit" aria-label="search">
                 <SearchIcon />
               </IconButton>
