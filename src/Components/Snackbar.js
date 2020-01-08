@@ -1,11 +1,6 @@
 import React, { Component } from "react";
-import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import SnackbarContent from '@material-ui/core/SnackbarContent';
-import Slide from '@material-ui/core/Slide';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
-import { fade } from "@material-ui/core/styles";
 
 class  SimpleSnackbar extends Component {
   state={

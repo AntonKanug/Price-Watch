@@ -41,7 +41,7 @@ class Search extends Component {
         this.data = data.data
         this.data.sort(function(a, b){
           var aLen = a.priceList.length, bLen = b.priceList.length
-          if (aLen>=2 && bLen>=2){
+          if (aLen>=2 && bLen>=2 && a.available){
             var aPrice1 = a.priceList[aLen-1].price, bPrice1 = b.priceList[bLen-1].price
             var aPrice2 = a.priceList[aLen-2].price, bPrice2 = b.priceList[bLen-2].price
             var aChange = (aPrice1-aPrice2)*100/aPrice2, bChange = (bPrice1-bPrice2)*100/bPrice2
