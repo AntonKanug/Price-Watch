@@ -13,7 +13,7 @@
 
 ## Demo
 
-![image1](https://github.com/AntonKanug/AntonKanug-3.0/blob/master/public/assets/PriceWatch-White.gif)
+![image1](https://anton-kanug.web.app/assets/PriceWatch-White.gif)
 
 ## Sample Email
 
