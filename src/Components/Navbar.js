@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import AddProduct from './AddProduct';
+import ViewProduct from './ViewProduct';
 
 class Navbar extends Component {
   render() {
@@ -13,6 +14,7 @@ class Navbar extends Component {
             <div style={{ flexGrow:'1'}}></div>
             <p style={{ fontFamily:'Avenir, sans-serif', fontWeight:'900', fontSize:'19px', marginTop:'20px', marginRight:'10px'}} className='text-Navbar'>Want to watch a Product?</p>
             <AddProduct/>
+            <ViewProduct/>
           </Toolbar>
         </AppBar>
         );            
