@@ -1,32 +1,48 @@
 import React, { Component } from 'react'
 import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
+import axios from 'axios';
 
 export class ShowProducts extends Component {
+
+    state={
+        response:false,
+        invisible:false,
+    }
+    submit (){ 
+        axios.post('https://pricewatch-antonk.herokuapp.com/rmProduct',{
+                id: this.props.products._id,
+                email: this.props.email
+            })
+            .then(res => {
+                this.setState({
+                    response:true,
+                    invisible:true
+                    })
+                })
+                .catch(err => {
+                    this.setState({
+                        response:false
+                    })
+                })
+        }
     render() {
         return (
             <div style={{padding:'8px 24px 8px 24px'}}>
-                {this.props.products.length!==0?
-                    this.props.products.map((product, index) => (
-                    <div style={{marginBottom:'15px'}}>
+    
+                    <div style={{marginBottom:'15px', opacity: this.state.invisible?"0.5":"1"}} >
 
                         <div className="flex-containter" style={{ flex: 'wrap', flexWrap: 'row',display: 'flex'}}>
                         <div className="imgClass-View" style={{ display: 'inline-block',padding: '5px 10px 10px 10px', zIndex: '0'}}>
-                            <img className="resultCardImg" style={{width: '130px', height: '130px'}} alt={product.title} src={product.image} ></img>
+                            <img className="resultCardImg" style={{width: '130px', height: '130px'}} alt={this.props.products.title} src={this.props.products.image} ></img>
                         </div>
                         <div >
-                        <h6  style={{fontFamily:'avenir, Nunito Sans, sans-serif',fontWeight:'700', fontSize:'18px', margin:'0px',  display:'inline-block'}} >{product.title}</h6>
-                        <h6 style={{fontFamily:'avenir, Nunito Sans, sans-serif',fontWeight:'900', fontSize:'23px', margin:'0px',  display:'inline-block'}}>{"$ " + product.priceList[product.priceList.length-1].price.toFixed(2)}</h6>
+                        <h6  style={{fontFamily:'avenir, Nunito Sans, sans-serif',fontWeight:'700', fontSize:'18px', margin:'0px',  display:'inline-block'}} >{this.props.products.title}</h6>
+                        <h6 style={{fontFamily:'avenir, Nunito Sans, sans-serif',fontWeight:'900', fontSize:'23px', margin:'0px',  display:'inline-block'}}>{"$ " + this.props.products.priceList[this.props.products.priceList.length-1].price.toFixed(2)}</h6>
                         </div>
-                        <Button style={{color:'red', display:'inline-block', float:'right'}}><DeleteIcon style={{color:'red'}}/></Button>
+                        <Button disabled={this.state.invisible}  style={{color:'red', display:'inline-block', float:'right'}}><DeleteIcon style={{color:'red'}} onClick={this.submit.bind(this)}/></Button>
                         </div>
-                        </div>
-              
-                )): 
-                <div style={{width:'100%', marginTop:'40px', marginBottom:'40px', justifyContent:'center', justifyItems: 'center'}}>
-                    <img src={'assets/notFoundImg.png'} style={{maxWidth:'450px',textAlign:'center'}} alt="" className="center"/>
-                    <h2 style={{textAlign:'center',fontFamily:'avenir, Nunito Sans, sans-serif',fontWeight:'900', marginTop:'10px', fontSize:'35px'}}>View Your Products</h2>
-                </div>}
+                    </div>
             </div>
         )
     }
