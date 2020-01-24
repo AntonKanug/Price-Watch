@@ -64,7 +64,7 @@ class ViewProduct extends Component {
     
       //Filter from entered textField
       filter = (email) => {
-          return email.emailList[0]!=""? email.emailList.includes(this.state.email.toLowerCase()) : 0
+          return email.emailList.includes(this.state.email.toLowerCase())
       }
     
       componentDidMount(){
@@ -121,7 +121,7 @@ class ViewProduct extends Component {
             
 
       render() {
-        var filteredData = this.state.response? this.data.filter(this.filter):null
+        var filteredData = this.state.response? this.data.filter(this.filter):[]
         if (this.state.show) document.title = "Price Watch | View Products";
         else document.title = "Price Watch"
           return (
@@ -155,17 +155,16 @@ class ViewProduct extends Component {
                     </Button>
                 </DialogActions>
             
-                {filteredData != null? filteredData.map((product,index) => (<ShowProduct products={product} email={this.state.email}/> )) :
+                {filteredData.length != 0 && this.state.email!=""? filteredData.map((product,index) => (<ShowProduct products={product} email={this.state.email}/> )):
                     <div style={{width:'100%', marginTop:'40px', marginBottom:'40px', justifyContent:'center', justifyItems: 'center'}}>
                     <img src={'assets/notFoundImg.png'} style={{maxWidth:'450px',textAlign:'center'}} alt="" className="center"/>
                     <h2 style={{textAlign:'center',fontFamily:'avenir, Nunito Sans, sans-serif',fontWeight:'900', marginTop:'10px', fontSize:'35px'}}>View Your Products</h2>
                 </div>   
-            }
-                {/* // <ShowProduct products={filteredData}/> */}
+                }
             </Dialog>
             
             <Button disabled={!this.state.response} variant='contained' style={{marginTop:"0px", marginLeft:'10px',borderRadius:'100px', background:'#FEBD69', fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:'900', textTransform:'none', fontSize:'20px', padding:'0px 25px 0px 25px'}} 
-            onClick={() => this.setState({show:true, added: false, error: false, emailValid: true, product:''})}>View Products</Button>
+            onClick={() => this.setState({show:true, added: false, error: false, emailValid: true})}>View Products</Button>
             <Snackbar
                 style={{fontFamily:'Avenir, Nunito Sans, sans-serif', fontWeight:'900'}}
                 anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
