@@ -11,11 +11,6 @@ import SkeletonCard from './SkeletonCard';
 AOS.init();
 
 class Search extends Component {
-  constructor(props){
-    super(props);
-    this.data = null
-  }
-
   state={
     textField: null,
     show: false,
@@ -35,33 +30,11 @@ class Search extends Component {
     else return false
   }
 
-  componentDidMount(){
-    axios.get('https://pricewatch-antonk.herokuapp.com/products')
-      .then((data) => {
-        this.data = data.data
-        this.data.sort(function(a, b){
-          var aLen = a.priceList.length, bLen = b.priceList.length
-          if (aLen>=2 && bLen>=2 && a.available){
-            var aPrice1 = a.priceList[aLen-1].price, bPrice1 = b.priceList[bLen-1].price
-            var aPrice2 = a.priceList[aLen-2].price, bPrice2 = b.priceList[bLen-2].price
-            var aChange = (aPrice1-aPrice2)*100/aPrice2, bChange = (bPrice1-bPrice2)*100/bPrice2
-            return Math.abs(bChange) - Math.abs(aChange)
-          }
-          else return 1
-        })
-        this.setState({
-          response:true
-        });
-      })
-      .catch((error) => {
-        console.error(error)
-      })
-  }
-
     render() {
-      var filteredData = this.state.response? this.data.filter(this.filter):null
+      var data = this.props.data  
+      var filteredData = data!=null? data.filter(this.filter):null
       if (filteredData!==0) this.setState.show = true
-      var placeholder = this.state.response? "Search for over " + this.data.length + " Products": "Booting Up Backend, Please Wait"
+      var placeholder = data!=null? "Search for over " + data.length + " Products": "Unidling Backend, Please Wait"
 
         return (
           <div data-aos="fade-up" data-aos-offset="150">
@@ -78,7 +51,7 @@ class Search extends Component {
               </IconButton>
             </div>
             <div style={{ alignItems: 'center',   margin: 'auto'}}>
-            {this.state.response? 
+            {data!=null? 
               <Results products={filteredData}/>:
                 <SkeletonCard/>}
             </div>

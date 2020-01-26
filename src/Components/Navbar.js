@@ -14,7 +14,7 @@ class Navbar extends Component {
             <div style={{ flexGrow:'1'}}></div>
             <p style={{ fontFamily:'Avenir, sans-serif', fontWeight:'900', fontSize:'19px', marginTop:'20px', marginRight:'10px'}} className='text-Navbar'>Want to watch a Product?</p>
             <AddProduct/>
-            <ViewProduct/>
+            <ViewProduct data={this.props.data}/>
           </Toolbar>
         </AppBar>
         );            
