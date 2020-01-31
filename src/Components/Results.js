@@ -10,7 +10,7 @@ class Results extends Component {
             <div className="results">
                 {this.props.products.length!==0?
                     this.props.products.map((product, index) => (
-                        <ResultCard key={index} product={product}/>
+                        <ResultCard key={product._id} product={product}/>
                 )): 
                 <div style={{width:'100%', marginTop:'40px', marginBottom:'40px', justifyContent:'center', justifyItems: 'center'}}>
                     <img src={'assets/notFoundImg.png'} style={{maxWidth:'450px',textAlign:'center'}} alt="" className="center"/>
