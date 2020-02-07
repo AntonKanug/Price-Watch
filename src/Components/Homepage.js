@@ -6,21 +6,8 @@ import './App.css';
 import axios from 'axios';  
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import LinearProgress from '@material-ui/core/LinearProgress';
-import { withStyles } from '@material-ui/core/styles';
 AOS.init();
 
-
-const StyledBar = withStyles({
-root: {
-    background: 'white',
-    color: '#00695c'
-},
-bar: {
-    borderRadius:10,
-    backgroundColor: '#F77313',
-    }
-})(LinearProgress);
 
 class Homepage extends Component{
   constructor(props){
